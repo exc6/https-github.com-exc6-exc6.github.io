@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换背景色</title>
+</head>
+
+<body>
+    <button>开始</button>
+    <button>停止</button>
+    <script>
+        //点击btn1自动切换背景色（随机背景色），点击btn2消除定时器
+        //创建数组，用于做成16进制随机数
+        const hex = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f']
+       let color = '#'
+       var oBtn = document.querySelectorAll('button')
+        var timer = null
+
+    //从hex数组中随机抽取6个数组元素
+    function changeColor(){
+    color = '#'
+    for(let i=0;i<6;i++){
+        color += hex[fn()]//i是有问题的：不随机（问题）
+    }
+    document.body.style.background = color
+    console.log(color)
+}
+    
+    function fn(){
+        // Math.random()//0 - 1
+        return Math.floor(Math.random() * hex.length)
+    }
+        // 点击开始
+        oBtn[0].onclick = function () {
+            changeColor()
+            window.clearInterval(timer)
+            // 开启定时器
+            timer = window.setInterval(changeColor,1000)            
+        }
+        console.log(oBtn[0])
+        // 点击停止
+        oBtn[1].onclick = function(){
+            window.clearInterval(timer)
+        }
+    </script>
+</body>
+
+</html>

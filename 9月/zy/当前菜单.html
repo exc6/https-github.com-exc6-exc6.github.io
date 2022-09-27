@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        a:active{
+          color: chocolate;
+        }
+        nav{
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            margin: 50px auto 0 auto;
+            display: flex;
+            border: 1px solid #ccc;
+            font-size: 18px;
+        }
+        nav a{
+            background-color: #fff;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .active{
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="active">首页</a>
+        <a href="#">新闻</a>
+        <a href="#">产品</a>
+        <a href="#">服务</a>
+        <a href="#">联系我们</a>
+    </nav>
+
+    <script>
+        var aA = document.querySelectorAll('nav a')
+        var last = aA[0]
+
+        for(var i=0;i<aA.length;i++){
+            aA[i].onclick = function(){
+                last.className = ''
+                this.className = 'active'
+                last = this
+            }
+        }
+    </script>
+</body>
+
+</html>

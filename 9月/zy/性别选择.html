@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>性别选择</title>
+    <style>
+        .btn{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /* border: 1px solid #000; */
+            border: none;
+        }
+        .bg{
+           background-color: cadetblue;
+
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="">性别:</label>
+    <input add="false" class="btn" type="button" value="男">
+    <input add="false" class="btn" type="button" value="女">
+    <input add="false" class="btn" type="button" value="保密">
+    </form>
+    <script>
+        // 点击任意按钮 让按钮的背景色变色 并清除上一个背景色
+        // 1获取元素
+        var aInput = document.querySelectorAll('.btn')
+        
+        // 2为三个按钮批量添加点击事件
+        for(var i=0;i<aInput.length;i=i+1){
+            // 4创建变量（负责记录bg类的变化）
+            aInput[i].add = false
+            aInput[i].onclick = function(){
+                // 3创建分支任务：1添加bg2清除bg
+                if(!this.add){//5设置条件
+                    // 8在点击按钮后 为当前按钮添加bg类之前 记得用for循环
+                    for(var i=0;i<aInput.length;i=i+1){
+                        aInput[i].className = 'btn'
+                        aInput[i].add = false
+                    }
+                    this.className = 'btn bg'
+                    //7清除bg类之后 记得修改按钮的add属性的值
+                    this.add = true
+                }else{
+                    this.className = 'btn'
+                    this.add = false
+                }
+            }
+        }
+    </script>
+</body>
+</html>

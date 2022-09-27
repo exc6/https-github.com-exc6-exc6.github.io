@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #box{
+        border: 3px solid #000;
+        width: 550px;
+        height: 310px;
+        margin: 100px auto 0;
+        position: relative;
+    }
+    #right{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        margin-top: -13.5;
+    }
+    #left{
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        margin-top: -13.5;
+    }
+</style>
+</head>
+<body>
+<div id="box">
+    <img id="left" src="./images/prev.png" alt="">
+    <img id="img" src="./images/img01.jpg" alt="">
+    <img id="right" src="./images/next.png" alt="">
+</div>
+<script>
+    // 获取元素
+    // =等于赋值
+    var img1 = document.getElementById('left')
+    var img2 = document.getElementById('img')
+    var img3 = document.getElementById('right')
+    var num = 1
+    // 切换图片
+    img3.onclick = function(){
+        num = num + 1
+        if(num == 4){
+            num = 1
+        }
+        img2.src = './images/img0'+num+'.jpg'
+    }
+    img1.onclick = function(){
+        num = num + 1
+        if(num == 4){
+            num = 1
+        }
+        img2.src = './images/img0'+num+'.jpg'
+    }
+</script>
+</body>
+</html>

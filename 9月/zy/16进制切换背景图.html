@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>切换</button>
+    <!-- 如何随机生成一个十六进制的颜色 -->
+
+    <script>
+        /* 思路：
+        1.16进制的颜色的语法格式：#RRGGBB r红 g绿 b蓝
+        2.16进制：0 - f
+        3.Math.random() 随机数 0 - 16
+        */
+
+       const hex = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f']
+       let color = '#'
+
+    //从hex数组中随机抽取6个数组元素
+    function changeColor(){
+    color = '#'
+    for(let i=0;i<6;i++){
+        color += hex[fn()]//i是有问题的：不随机（问题）
+    }
+    document.body.style.background = color
+    console.log(color)
+}
+    
+    function fn(){
+        // Math.random()//0 - 1
+        return Math.floor(Math.random() * hex.length)
+    }
+    // console.log(fn())
+    // 初始化
+    changeColor()
+    const btn = document.querySelector('button')
+    btn.onclick = function(){
+         //当click按钮时调用
+         changeColor()
+    }
+    </script>
+</body>
+</html>  

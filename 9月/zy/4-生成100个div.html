@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            position: relative;
+            
+            
+        }
+        ul li{
+            text-align: center;
+            margin: 0 10px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid black;
+            position: absolute;
+            
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">自动生成100个div</button>
+    <ul id="ul"></ul>
+    <script>
+        // 获取元素
+       var btn = document.getElementById("btn")
+       var oUl = document.getElementById("ul")
+       var  str = ""
+       
+       var color = [
+            "red",
+            "yellow",
+            "blue",
+            'green'
+        ]
+        
+        // console.log(0%4)
+        // console.log(1%4)
+        // console.log(2%4)
+        // console.log(3%4)
+        
+        // 点击btn在ul里生成100个li
+        btn.onclick = function(){
+            // 使用for循环生成100个li
+            for(var i =0 ; i < 10 ; i= i + 1){
+                for(var j = 0;j <10; j = j+ 1){
+                    // oUl.innerHTML =oUl.innerHTML + "<li style='background:"  +color[i%5]+"'>"+ i +"</li>"
+                    str =  str+ "<li style='background:"+color[((i*10)+j)%color.length]+";left:"+j *50+"px;top:"+i *50+"px;'>"+(i*10+j)+"</li>"
+                }
+            }
+         oUl.innerHTML = str
+        }
+    </script>
+</body>
+</html>

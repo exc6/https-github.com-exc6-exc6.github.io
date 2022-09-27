@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开关</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;/*  */
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            background-color: #2c2c2c;
+            display: flex;
+            justify-content: center;
+            align-items: center;/*  */
+            height: 100%;
+            transition: .3s;
+        }
+        .btn{
+            width: 180px;
+            height: 60px;
+            background-color: #111;
+            border-radius: 30px;
+            position: relative;
+            cursor:pointer;
+            transition: .3s;
+        }
+        .circle{
+            width: 60px;
+            height: 60px;
+            background-color: #666;
+            box-shadow: 0 0 40px 0 rgba(5, 2, 0, .8) inset;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            transition: .4s;
+        }
+        .active{
+            /* 背景颜色 */
+            background-color: #fff;
+        }
+        .btn.active{
+            /* 胶囊颜色 */
+            background-color: #eee;
+        }
+        .active .circle{
+            /* 按钮颜色 */
+            background-color: #ccc;
+            box-shadow: 0 0 40px 0 rgba(255, 255, 255, .8) inset;
+            left: 120px;
+        }
+    </style>
+</head>
+<body>
+   <div class="btn">
+    <i class="circle"></i>
+   </div>
+   <script>
+    // 总目标：点击圆形，让圆形向右移动 (修改circle的left值)
+
+    // 1.获取元素
+    var oI = document.querySelector('.btn') 
+    oI.onclick = function(){
+        // 调取css的内容
+        this.classList.toggle('active')
+        document.body.classList.toggle('active')
+    }
+    // 2.添加点击事件
+    // oI.onclick = function(){
+    //     // 3.修改oI的left值
+    //     this.style.left = '120px'
+    // }
+   </script>
+</body>
+</html>

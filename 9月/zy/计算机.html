@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 150px;
+            border: 1px solid black;
+            margin: 0 auto;
+            text-align: center;
+            background-color: beige;
+        }
+        .box p {
+            font-size: 40px;
+            height: 30px;
+            line-height: 30px;
+        }
+        button{
+            width: 40px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <p></p>
+        </div>
+        <button>减一</button>
+        <button>归零</button>
+        <button>加1</button>
+    </div>
+    <script>
+        // 1.获取元素
+        var oP = document.querySelector('p')
+        var oBtn1 = document.querySelectorAll('button')[0]
+        var oBtn2 = document.querySelectorAll('button')[1]
+        var oBtn3 = document.querySelectorAll('button')[2]
+//2.创建变量 在p标签中传入一个num
+        var num = 0
+         oP.innerHTML = num
+        // 2.点击btn1，数字减1，颜色为粉色
+        oBtn1.onclick = function(){
+            oP.innerHTML = num -=1
+            oP.style.color = 'red'
+
+        }
+        //  3.点击btn2,重置为0
+        oBtn2.onclick = function(){
+            oP.innerHTML = num = 0
+            oP.style.color = '#000'
+        }
+        //  4.点击btn3，数字加1，颜色为红色
+        oBtn3.onclick = function(){
+            oP.innerHTML = num += 1
+            oP.style.color = 'red'
+        }
+    </script>
+</body>
+
+</html>

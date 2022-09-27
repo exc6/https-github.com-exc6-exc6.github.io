@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+   <img src="img/tu1.jpg" alt="">
+   <script>
+    var oImg = document.querySelector('img')
+    var on = true
+    oImg.onclick = function(){
+        if(on){
+            oImg.src = 'img/tu2.jpg'
+            on = false
+        }else{
+            oImg.src = 'img/tu1.jpg'
+            on = true
+        }
+    }
+   </script>
+</body>
+</html>

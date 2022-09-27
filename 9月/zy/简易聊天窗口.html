@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天框</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            border: 3px solid #000;
+            width: 300px;
+            height: 500px;
+            margin: 20px auto 0;
+
+        }
+        #win{
+            background-color: #fff;
+            height: 450px;
+        }
+        #msg{
+            width: 200px;
+            height: 30px;
+        }
+        #btn{
+            width: 35px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="win"></div>
+        <div>
+            <span>张三：</span>
+            <input type="text" id="msg">
+            <button id="btn">发送</button>
+        </div>
+    </div>
+    <script>
+        // 获取元素
+        var oInput = document.getElementById('msg')
+        var oBtn = document.getElementById('btn')
+        var oDiv = document.getElementById('win')
+        var msg = ''
+        // 点击obtn按钮，读取oInput的value属性，写入oDiv的innerHTML
+        oBtn.onclick = function(){
+            if(oInput.value == ''){
+                window.alert('请输入内容!')
+            }else{
+            msg = oInput.value
+            oDiv.innerHTML = oDiv.innerHTML + '<p>' + msg + '</p>'
+            oInput.value = ''
+            oDiv.style.fontSize = '20px'
+            oInput.style.boxShadow = '0px 0px 3px red'
+        }
+        }
+    </script>
+</body>
+</html>

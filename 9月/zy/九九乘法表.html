@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九乘法表</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        table{
+            border-collapse: collapse;
+            margin: 50px auto 0;
+        }
+        td{
+            border: 1px solid #000;
+            text-align: center;
+            width: 65px;
+            height: 25px;
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <table>
+    </table>
+
+    <script>
+        // 目标批量生成递增单元格的表格
+
+        // 获取元素
+        var oTable = document.querySelector('table')
+        // 创建变量
+        var str = ''
+        // 使用大for循环拼接字符串创建9个tr
+        for(var i=1; i<10; i=i+1){
+            str = str + "<tr>"
+                // 使用小for循环拼接字符串创建9个td
+            for(var j=1; j<=i; j=j+1){
+                str = str + "<td>"
+                    str = str + i +"x" + j + "=" + j*i
+                str = str + "</td>"
+
+            }
+            str = str + "</tr>"
+            
+        }
+
+        // 把str写入dom
+        oTable.innerHTML = str
+    </script>
+</body>
+</html>

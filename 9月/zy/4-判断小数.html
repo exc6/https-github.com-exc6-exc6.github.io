@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>按钮</button>
+    <script>
+        var num = '12.34元'// 
+        var oINput = document.querySelector('input')
+        var oBtn = document.querySelector('button')
+        var txt = ''
+        oBtn.onclick = function(){
+            txt = oINput.value
+            // console.log(parseInt('100px'))//100
+            // console.log(parseFloat('100.887'))//100.887
+            if(parseInt(txt) == parseFloat(txt)){
+                alert('你输入的是整数')
+            } else{
+                alert('你输入的是小数')
+            }
+          
+        }
+    </script>
+</body>
+</html>

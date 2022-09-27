@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张三在哪里</title>
+</head>
+<body>
+    <input id="text1" type="text" placeholder="请输入内容">
+   <select id="select1">
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="杭州">杭州</option>
+    <option value="苏州">苏州</option>
+    <option value="湖南">湖南</option>
+   </select>
+   <input id="btn1" type="button" value="按钮" >
+   <script>
+    var oText = document.querySelector('#text')
+    var select1 = document.querySelector('#select1')
+    var oBtn1 = document.querySelector('#btn1')
+
+    oBtn1.onclick = function(){
+           alert(text1.value + '在' + select1.value)
+       }
+   </script>
+</body>
+</html>

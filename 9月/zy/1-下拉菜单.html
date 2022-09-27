@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-下拉菜单</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+        }
+        ul{
+            list-style: none;
+        }
+        nav{
+            width: 200px;
+            height: 50px;
+            /* border: 1px solid black; */
+            background-color: aliceblue;
+            margin: 50px auto;
+        }
+        nav>a{
+            display: block;
+            position: relative;
+            width: 100%;
+            background-color: aquamarine;
+        }
+        .sub-meue{  
+            display: none;
+            background-color: cornsilk;
+            position: absolute;
+            width: 200px;
+            text-align: center;
+        }
+        .active{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">一级菜单
+            <ul class="sub-meue">
+                <li><a href="#">二级菜单</a></li>
+                <li><a href="#">二级菜单</a></li>
+                <li><a href="#">二级菜单</a></li>
+            </ul>
+        </a>
+    </nav>
+
+    <script>
+        // 目标：鼠标悬停在a标签上 显示.sub-meue
+
+        // 1.获取元素
+        var oA = document.querySelector('nav a')
+        var oUl = document.querySelector('.sub-meue')
+
+        // 2.添加鼠标悬停在a标签上的事件
+        oA.onmouseover = function(){
+            // 3.显示.sub-meue active：通过修改class属性去做
+            oUl.className = "sub-meue active"
+        }
+        // 目标2：鼠标移出a标签，隐藏.sub-menu
+        oA.onmouseout = function(){
+            // 3.显示.sub-meue active：通过修改class属性去做
+            oUl.className = "sub-meue"
+        }
+    </script>
+</body>
+
+</html>

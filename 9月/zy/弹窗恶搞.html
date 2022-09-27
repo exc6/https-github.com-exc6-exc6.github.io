@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹窗恶作剧</title>
+    <style>
+        #btn{
+            margin: 350px 50%;
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            border: 0;
+            background-size: 200%;
+            border-radius: 30px;
+            transition: .5s;
+            background-image: linear-gradient(to right,#ec9b4f,#9654f6,#02c0a3);
+        }
+        #btn:hover{
+            background-position: right;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="点击">
+    <script>
+        // 1.获取元素
+        var oBtn = document.querySelector('#btn')
+        // 1.获取变量
+        var n = 10000
+        // 点击btn可以生成弹窗
+        oBtn.onclick = function(){
+            for(i=0;i<n;i++){
+                window.alert('你觉得生活啥时候是个头啊')
+            }
+        }
+
+    </script>
+</body>
+</html>

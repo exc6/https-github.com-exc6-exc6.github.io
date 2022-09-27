@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    p{
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+<button id="btn1">-</button>
+<button id="btn2">+</button>
+<p id="box">
+    汪涵被曝录节目怼嘉宾！全程咄咄逼人面露厌恶
+    胡彦斌真是被坑惨了！涉嫌PC一事，原来是假新闻
+    张翰新剧评分又跌了！本人12天没发微博
+    《悲情城市》修复版首映，导演侯孝贤缺席疑似确诊新冠
+    何超莲顺利考取内地驾照 发文晒照开心炫耀
+    刘德华近照显老态，惨被拍成一米三
+    窦唯前妻带女儿泡吧，20岁窦佳嫄与男人扳手腕纹身
+    特步公主订婚后首秀恩爱，自曝与老公是青梅竹马
+</p>
+<script>
+   // 获取元素
+   var btn1 = document.getElementById('btn1')
+    var btn2 = document.getElementById('btn2')
+    var box = document.getElementById('box')
+    // 创建对象
+    var oBox = 16
+    // 点—让字体变小
+    btn1.onclick = function(){
+        if(oBox > 14){
+            oBox = oBox - 2
+            box.style.fontSize = oBox + 'px'
+        }
+    }
+    // 点+让字体变大
+    btn2.onclick = function(){
+        if(oBox < 30){
+            oBox = oBox + 2
+            box.style.fontSize = oBox + 'px'
+        }
+    }
+</script>
+</body>
+</html>

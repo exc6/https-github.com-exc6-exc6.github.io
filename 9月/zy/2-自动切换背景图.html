@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button>开始</button>
+        <button>停止</button>
+    </div>
+    <script>
+        var arr = [
+        'images/slider10.jpg',
+        'images/slider11.jpg',
+        'images/slider12.jpg']
+
+ //点击开始按钮，每隔一秒切换body标签的背景图片
+        // 1.获取元素
+        var aBtn = document.querySelectorAll('button')
+        var oBody = document.body
+        // 3.定义一个存储定时器的变量
+        var timer 
+        // 7.定义变量n
+        var n = 0
+
+
+        document.body.style.background = `url(${arr[n]})`
+        // 2.点击开始按钮
+        aBtn[0].onclick = function(){
+            // 5.开启定时器
+            timer = window.clearInterval(timer)
+            timer = window.setInterval(fn,1000)
+        }
+    //    4.定义fn函数
+    function fn(){
+        // 6.修改body的背景图片
+        oBody.style.background = `url(${arr[n]})`
+        // 8.让n动起来,以便于切换数组元素
+        n++
+        if(n>2){
+            n = 0
+        }
+    }
+         //点击停止
+        //要停止定时器，必须直到定时器是一个函数。定时器这个函数
+        //setInterval()定时器这个函数它的返回值是一个用数字表示
+        //id表示你是页面上哪一个定时器
+        aBtn[1].onclick = function(){
+            timer = window.clearInterval(timer)
+        }
+    </script>
+</body>
+</html>

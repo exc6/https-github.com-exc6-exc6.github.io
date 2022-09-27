@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: cadetblue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">显示</button>
+    <div class="box"></div>
+    <script>
+        var oBtn = document.querySelector('#btn')
+        var oDiv = document.querySelector('.box')
+        // 通过变量记住上次点击
+        var on = true
+        // 点击按钮显示oDiv,和隐藏oDiv
+        oBtn.onclick = function(){
+            if(on){
+                oDiv.style.display = 'none'
+                oBtn.innerHTML = '隐藏'
+                on = false
+            }else{
+                oDiv.style.display = 'block'
+                oBtn.innerHTML = '显示'
+                on = true
+            }
+        }
+
+    </script>
+</body>
+</html>

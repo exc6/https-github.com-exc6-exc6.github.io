@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天窗口</title>
+    <style>
+        .container {
+            width: 500px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            background-color: azure;
+        }
+
+        .box {
+            width: 500px;
+            height: 200px;
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <span>张三</span><input type="text"><button>发送</button>
+    </div>
+    <script>
+        // 终极目标：点击按钮发送至.box里
+        // 1.获取元素
+        var oDiv = document.querySelector('.box')
+        var oInput = document.querySelector('input')
+        var oBtn = document.querySelector('button')
+        var oSpan = document.querySelector('span')
+
+        // 2.点击oBtn，添加事件处理函数
+        oBtn.onclick = function(){
+        if(oInput.value == ''){
+            alert('请输入文字')
+        }else{
+              //3.读取oInput的value值
+              oDiv.innerHTML += "<p><sapn>张三:</span>" + oInput.value + "</p>"
+
+            // 4.清空oInput的value值
+            oInput.innerHTML = ''
+        }
+        // oBtn.onclick = function () {
+          
+        // }
+    }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>0</button>
+    <button>0</button>
+    <button>0</button>
+
+    <script>
+        var arr1 = ['a','b','c','d']
+        // 1获取元素
+        var arr2 = document.querySelectorAll('button')
+        // 4定义变量
+        // var num = 0
+        // 2初始化：批量添加a
+        for(var i=0;i<arr2.length;i=i+1){
+            arr2[i].innerHTML = arr1[0]
+            arr2[i].num = 0
+            // 3批量添加点击事件
+            arr2[i].onclick = function(){
+                // 5让当前按钮的。innerHTML=arr的下一个
+                this.num = this.num + 1
+                this.innerHTML = arr1[this.num]
+            }
+        }
+    </script>
+</body>
+</html>
