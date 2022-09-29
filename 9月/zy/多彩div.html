@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+	div {
+        width: 80px;
+        height: 80px;
+        background-color: #333333;
+        margin: 20px 5px;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+<button type="button">显示</button>
+<section></section>
+<script type="text/javascript">
+    var str = '' //string:表示创建一个字符串变量
+    var colorArr = ['#bdfdbf', '#6cb960', '#597aca', '#3d6d54','#147586']
+    var oBtn = document.querySelector('button')
+    var oSection = document.querySelector('section')
+    var n = 0;
+
+    for (var i = 0; i < 10; i++) {
+        if (n == 5) {
+            n = 0
+        }
+        str += "<div style='background:" + colorArr[n] + "'></div>"
+        n++
+    }
+    oBtn.onclick = function (){
+        oSection.innerHTML = str
+    }
+    
+</script>
+    
+</body>
+</html>

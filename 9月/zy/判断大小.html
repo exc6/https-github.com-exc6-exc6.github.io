@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>判断大小:[ 2,60,100,-5,0,27,68,-555]</h2>
+    <hr>
+    <script>
+       var arr = [ 2,60,100,-5,0,27,68,-555]
+       var max = 0
+       var min = 0
+       for(var i=0;i < arr.length;i++){
+        if(max < arr[i]){
+            max = arr[i]
+        }
+        if(min > arr[i]){
+            min = arr[i]
+        }
+       }
+       document.write('最大值：' + max  +  '；最小值：' + min)
+    </script></h2>
+</body>
+</html>

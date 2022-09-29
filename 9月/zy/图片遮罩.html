@@ -4,12 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>图片遮罩</title>
     <style>
-        
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box div{
+            width: 80.9px;
+            height: 67px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        .box{
+            width: 800px;
+            height: 670px;
+            background-image: url(images/1.gif);
+            background-size:  800px 670px;
+        }
     </style>
 </head>
 <body>
-    <div class="box" id="box"></div>
+    <div class="box"></div>
+    <script>
+        var oDiv = document.querySelector('.box')
+        // 定义变量
+        var str = ''
+        // 添加点击事件并添加函数
+        // btn.onclick = function(){
+            // 批量拼接str
+            for(var i=0;i<10;i=i+1){
+                for(var j=0;j<10; j = j + 1){
+                str = str + '<div style="left:'+j* 80+'px;top:'+ i*67+'px;background:#56f7c1"></div>'
+                }
+                
+            }
+            // 把str写入到oDiv
+            oDiv.innerHTML = str
+
+        var oDiv = document.querySelectorAll('.box div')
+            // for重复添加悬停事件
+            for(var i=0;1<oDiv.length;i=i+1){
+            oDiv[i].onmouseover = function(){
+                this.style.background = 'rgba(0,0,0,0)'
+            }
+            }
+    </script>
 </body>
 </html>

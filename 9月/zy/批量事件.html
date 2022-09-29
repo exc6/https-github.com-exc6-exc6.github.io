@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    ul{
+        padding:0;
+        width:500px;
+        height:200px;
+        display: flex;
+        flex-wrap: wrap;
+        border: 5px solid black;
+        list-style:none;
+        justify-content: space-between;
+        transform: translate(50%,50%);
+    }
+    li{
+        width:90px;
+        height:90px;
+        background:blue;
+        position:relative;
+    }
+    /* li:hover div{ */
+    div{
+        width:80px;
+        height:80px;
+        background-color: gold;
+        position:absolute;
+        right:-80px;
+        top:-80px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+<ul class="aaa" id="bbb" title="hello" style="background:blue">
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+    <li><div></div></li>
+</ul>
+
+<script type="text/javascript">
+    var oUl = document.querySelector('ul')
+    var aLi = oUl.querySelectorAll('li')
+    
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].onmouseover = function(){
+            this.querySelector('div').style.display = 'block'
+        }
+        // aLi[i].onclick = function(){
+        aLi[i].onmouseout = function(){
+            this.querySelector('div').style.display = 'none'
+        }
+    }
+    
+    
+    
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		/* 
+		思路:1.先召集对象
+		     2.重置浏览器默认样式
+			 3.先写元素的外围结构的样式
+			 4.在写元素内部内容的样式
+
+		*/
+		/* 重置浏览器默认样式 */
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		#slider{
+			width: 640px;
+			height: 340px;
+			border: 5px solid black;
+			margin: 50px auto 0;
+			position: relative;
+			font-size: 16px;
+		}
+		/* #slider img{
+			
+		} */
+		#slider h2{
+			font-size: 18px;
+			/* background-color: aquamarine; */
+			background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.8));
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100px;
+			line-height: 40px;
+			line-height: 100px;
+			text-indent: 20px;
+			color: #fff;
+		}
+		#slider .btn{
+			width: 100px;
+			height: 100px;
+			line-height: 150px;
+			/* background-color: aquamarine; */
+			background-image: url(./images/sprite.png);
+			background-repeat: no-repeat;
+			background-position: 0 -164px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #fff;
+			text-align: center;
+		}
+		#slider .btn1{
+			/* background-position: 0 -164px; */
+			background-position: -260px -164px;
+			left: 0;
+			text-indent: -3em;/* 设置文本缩进，可取负值 正取右边值，负取左边值*/
+		}
+		#slider .btn2{
+			/* background-position: -290px 0px; */
+			background-position: -110px -164px;
+			right: 0;
+			text-indent: 1em;
+		}
+		#slider .btn1:hover{
+			background-position: 0 -164px;
+		}
+		#slider .btn2:hover{
+			background-position: -290px 0px;
+		}
+		#slider ul{
+			/* background-color: aliceblue; */
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			width: 160px;
+			display: flex;	
+			justify-content: space-around;
+		}
+		#slider ul li{
+			width: 26px;
+			height: 6px;
+			background-color: #ccc;
+			transform: skew(-20deg);/* 倾斜 */
+		}
+		#slider ul li.active{
+			background-color: red;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="slider">
+		<img src="./images/slider1.jpg" alt="">
+		<h2 class="title">[NBA]勇士104-89骑士 库里9三分砍40分</h2>
+		<div class="btn btn1">1/5</div>
+		<div class="btn btn2">1/5</div>
+		<ul class="squares">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+
+		var aTitle = ['[NBA]勇士104-89骑士 库里9三分砍40分', '国足全体抵达苏州 开始进行集中隔离', '为中国足球奋斗！武磊30岁生日快乐！', '足协宣布水庆霞担任中国女足主教练', '张家齐与姆巴佩联动 为旅法大熊猫幼崽命名',]
+		var aImg = ['images/slider1.jpg', 'images/slider2.jpg', 'images/slider3.jpg', 'images/slider4.jpg', 'images/slider5.jpg']
+		
+		const slider = document.querySelector('#slider')
+		const oImg = slider.querySelector('img')
+		const oH2 = slider.querySelector('h2')
+		const oBtn1 = document.querySelectorAll('.btn')[0]
+		const oBtn2 = document.querySelectorAll('.btn')[1]
+		const aLi = slider.querySelectorAll('.squares li')
+		
+
+		var num = 0
+
+		// 8.定义变量
+		var last = 0
+
+		// 定义函数
+		function play(n){
+		oImg.src = aImg[n]
+		oBtn1.innerHTML =  `${n + 1} / ${aImg.length}`
+		oBtn2.innerHTML =  `${n + 1} / ${aImg.length}`
+		oH2.innerHTML = aTitle[n]
+		aLi[last].className = ''
+		aLi[n].className = 'active'
+		last = n
+		}
+
+		play(num)
+
+		let a = 0
+		window.setInterval(function(){
+			a++
+			play(a)
+		},1000)
+
+		oBtn2.onclick = function(){
+		if(num < aImg.length-1){
+			num++
+		} else{
+			num = 0
+		}
+		play(num)
+		}
+		oBtn1.onclick = function(){
+		if(num > 0){
+			num--
+		} else{
+			num = aImg.length-1
+		}
+		play(num)
+		}
+
+		for (let i = 0; i < aLi.length; i++) {
+		aLi[i].index = i
+		aLi[i].onmouseover = function(){
+			play(this.index)
+	}
+	}
+	</script>
+</body>
+</html>
